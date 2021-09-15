@@ -1,3 +1,7 @@
 import * as path from 'path';
 
-export const baseGeneratorPath = path.join(__dirname, '../../src/app');
+const baseGeneratorPath = path.join(__dirname, '../../src/app');
+
+console.log(baseGeneratorPath);
+
+export {baseGeneratorPath};
