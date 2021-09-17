@@ -1,0 +1,51 @@
+/**
+*
+* {{ properCase componentName }}
+*
+*/
+{{#if wantMemo}}
+import React, { memo } from 'react';
+{{else}}
+import * as React from 'react';
+{{/if}}
+
+import {View, Text} from 'react-native';
+{{#if wantTranslations}}
+import { useTranslation } from 'react-i18next';
+import { messages } from './messages';
+{{/if}}
+
+interface Props {}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+{{#if wantMemo}}
+export const {{ properCase componentName }} = memo((props: Props) => {
+{{else}}
+export function {{ properCase componentName }}(props: Props) {
+{{/if}}
+  {{#if wantTranslations}}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { t, i18n } = useTranslation();
+  {{/if}}
+
+  return (
+  <View>
+    {{#if wantTranslations}}
+    <Text>
+      {t('')}
+      {/*  {t(...messages.someThing())}  */}
+    </Text>
+
+    {{else}}
+    <Text>
+      {{ properCase componentName }}
+    </Text>
+    {{/if}}
+  </View>
+  );
+
+{{#if wantMemo}}
+});
+{{else}}
+};
+{{/if}}
