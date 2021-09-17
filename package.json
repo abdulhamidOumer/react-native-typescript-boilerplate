@@ -1,0 +1,10 @@
+{
+  "name": "react-native-typescript-boilerplate",
+  "version": "0.0.1",
+  "description": "A React native boilerplate using typescript, redux & redux-saga. Inpired and derived from the famous react boilerplate",
+  "main": "index.js",
+  "repository": "git@github.com:abdulhamidOumer/react-native-typescript-boilerplate.git",
+  "author": "abdulhamidOumer <abdulhamidoumer3@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
