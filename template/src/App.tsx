@@ -8,7 +8,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 
 import { Provider } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 import { configureAppStore } from 'store/configureStore';
 
 import {
@@ -68,6 +69,10 @@ const App = () => {
   };
 
   const store = configureAppStore();
+
+  useEffect(() => {
+    SplashScreen.hide();
+  },[]);
 
   return (
     <Provider store={store}>
