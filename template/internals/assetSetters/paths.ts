@@ -22,3 +22,8 @@ export const androidResDir = path.join(
   __dirname,
   `../../android/app/src/main/res`,
 );
+
+export const androidSrcMainDir = path.join(
+  __dirname,
+  `../../android/app/src/main`,
+);

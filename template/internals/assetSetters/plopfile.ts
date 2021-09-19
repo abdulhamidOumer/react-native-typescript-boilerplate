@@ -2,7 +2,10 @@ import { NodePlopAPI } from 'node-plop';
 import sharp from 'sharp';
 import { appIconSetter } from './AppIcon';
 import { splashScreenIconSetter } from './SplashScreen';
-import { generateAndroidAppIcon } from './Utils/Android/icon-genertaor';
+import {
+  generateAndroidAppIcon,
+  generateAndroidSplashIcon,
+} from './Utils/Android/icon-genertaor';
 import {
   geneateIosAppIcons,
   generateIosSplashIcons,
@@ -43,6 +46,16 @@ export default function ploper(plop: NodePlopAPI) {
 
     if (iconPath) {
       await generateIosSplashIcons(iconPath);
+    }
+    return '';
+  });
+
+  plop.setActionType('generate-android-splash', async (answers, config) => {
+    const data = config?.data as GenerateIconData;
+    const iconPath = data?.fullIconPath;
+
+    if (iconPath) {
+      await generateAndroidSplashIcon(iconPath);
     }
     return '';
   });

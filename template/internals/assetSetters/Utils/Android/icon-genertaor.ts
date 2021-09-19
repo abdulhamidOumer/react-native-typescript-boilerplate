@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { androidResDir } from '../../paths';
+import { androidResDir, androidSrcMainDir } from '../../paths';
 
 export enum EAndroidMipmapTypes {
   hdpi = 'hdpi',
@@ -61,6 +61,56 @@ export const generateAndroidAppIcon = async (
         right: remainingObjectSize,
         background: 'rgba(200, 54, 54, 0)',
       })
+      .png()
+      .toFile(iconOutPath);
+  }
+
+  const playstoreIconPath = `${androidSrcMainDir}/ic_launcher-playstore.png`;
+  const playstoreObjSize = Math.round(512 * (resizePercentile / 100));
+  const remainingPlyStrSize = Math.round((512 - playstoreObjSize) / 2);
+  await sharp(iconPath)
+    .resize(playstoreObjSize, playstoreObjSize)
+    .extend({
+      top: remainingPlyStrSize,
+      bottom: remainingPlyStrSize,
+      left: remainingPlyStrSize,
+      right: remainingPlyStrSize,
+      background: 'rgba(200, 54, 54, 0)',
+    })
+    .png()
+    .toFile(playstoreIconPath);
+};
+
+export const generateAndroidSplashIcon = async (iconPath: string) => {
+  const iconSizes: IosIconConfigType[] = [
+    {
+      sizeType: EAndroidMipmapTypes.hdpi,
+      sizeValue: 150,
+    },
+    {
+      sizeType: EAndroidMipmapTypes.mdpi,
+      sizeValue: 100,
+    },
+    {
+      sizeType: EAndroidMipmapTypes.xhdpi,
+      sizeValue: 200,
+    },
+    {
+      sizeType: EAndroidMipmapTypes.xxhdpi,
+      sizeValue: 300,
+    },
+    {
+      sizeType: EAndroidMipmapTypes.xxxhdpi,
+      sizeValue: 400,
+    },
+  ];
+
+  const splashIconName = 'splash_icon.png';
+
+  for (const iconConfig of iconSizes) {
+    const iconOutPath = `${androidResDir}/mipmap-${iconConfig.sizeType}/${splashIconName}`;
+    await sharp(iconPath)
+      .resize(iconConfig.sizeValue, iconConfig.sizeValue)
       .png()
       .toFile(iconOutPath);
   }
