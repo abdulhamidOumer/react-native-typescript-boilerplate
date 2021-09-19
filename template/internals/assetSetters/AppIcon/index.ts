@@ -1,5 +1,5 @@
 import { Actions, PlopGeneratorConfig } from 'node-plop';
-import { baseImageAssetsPath } from '../../generators/paths';
+import { baseImageAssetsPath } from '../paths';
 
 export enum AssetSetterParams {
   assetPath = 'assetPath',
@@ -57,7 +57,7 @@ export const appIconSetter : PlopGeneratorConfig = {
         abortOnFail: true,
       });
     }
-    
+
     return actions;
   }
 }

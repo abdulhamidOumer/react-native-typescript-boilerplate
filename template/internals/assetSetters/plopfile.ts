@@ -1,6 +1,7 @@
 import { NodePlopAPI } from "node-plop";
 import sharp from "sharp";
 import { appIconSetter } from "./AppIcon";
+import { geneateIosIcons } from "./Utils/IOS/icon-generators";
 
 
 interface GenerateIconData {
@@ -16,7 +17,7 @@ export default function ploper(plop:NodePlopAPI) {
     const iconPath = data?.fullIconPath;
 
     if (iconPath) {
-      await sharp(iconPath).resize(1024, 1024).png().toFile('icon.png');
+      await geneateIosIcons(iconPath);
     }
     return '';
   });
