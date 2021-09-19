@@ -6,7 +6,14 @@ export const baseImageAssetsPath = path.join(
   '../../src/assets/images',
 );
 
+const iosImageAssetDir = `../../ios/${appConfig.name}/Images.xcassets`;
+
 export const iosAppIconsPath = path.join(
   __dirname,
-  `../../ios/${appConfig.name}/Images.xcassets/AppIcon.appiconset`,
+  `${iosImageAssetDir}/AppIcon.appiconset`,
+);
+
+export const iosSplashIconPath = path.join(
+  __dirname,
+  `${iosImageAssetDir}/SplashIcon.imageset`,
 );

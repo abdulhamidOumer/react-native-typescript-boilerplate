@@ -1,6 +1,6 @@
 import sharp from 'sharp';
 import fs from 'fs';
-import { iosAppIconsPath } from '../../paths';
+import { iosAppIconsPath, iosSplashIconPath } from '../../paths';
 
 interface IosIconResizerConfigType {
   size: number;
@@ -25,7 +25,7 @@ export const iosIconResizeConfigs: IosIconResizerConfigType[] = [
   },
 ];
 
-export const geneateIosIcons = async (imagePath: string) => {
+export const geneateIosAppIcons = async (imagePath: string) => {
   const iconDirExists = fs.existsSync(iosAppIconsPath);
   const contentsConfig = {
     images: [],
@@ -110,6 +110,45 @@ export const geneateIosIcons = async (imagePath: string) => {
 
   fs.writeFileSync(
     `${iosAppIconsPath}/Contents.json`,
+    JSON.stringify(contentsConfig, null, 2),
+  );
+};
+
+export const generateIosSplashIcons = async (imagePath: string) => {
+  const splashIconDirExists = fs.existsSync(iosSplashIconPath);
+  const iconSizes = [300, 600, 900];
+  const contentsConfig = {
+    images: [],
+    info: {
+      version: 1,
+      author: 'xcode',
+    },
+  };
+
+  if (!splashIconDirExists) {
+    fs.mkdirSync(iosSplashIconPath);
+  }
+
+  let count = 1;
+  for (const size of iconSizes) {
+    const iconName = `splash-${size}.png`;
+    const iconPath = `${iosSplashIconPath}/${iconName}`;
+
+    await sharp(imagePath).resize(size, size).png().toFile(iconPath);
+
+    const xcodeImageConfig = {
+      scale: `${count}x`,
+      idiom: 'universal',
+      filename: iconName,
+    };
+
+    contentsConfig.images.push(xcodeImageConfig);
+
+    count += 1;
+  }
+
+  fs.writeFileSync(
+    `${iosSplashIconPath}/Contents.json`,
     JSON.stringify(contentsConfig, null, 2),
   );
 };
