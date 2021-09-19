@@ -1,44 +1,115 @@
-import sharp from "sharp";
-import fs from "fs";
+import sharp from 'sharp';
+import fs from 'fs';
+import { iosAppIconsPath } from '../../paths';
 
 interface IosIconResizerConfigType {
   size: number;
   skipInitialScale?: boolean;
   skipDoubleScale?: boolean;
   skipTripleScale?: boolean;
+  isIosMarketing?: boolean;
 }
 
-export const iosIconResizeConfigs : IosIconResizerConfigType[] = [
-  {size: 20 },
-  {size: 29 },
-  {size: 40 },
-  {size: 60, skipInitialScale: true },
-  {size: 76, skipTripleScale: true },
-  {size: 83.5, skipTripleScale: true, skipInitialScale: true },
-  {size: 1024, skipTripleScale: true, skipDoubleScale: true },
+export const iosIconResizeConfigs: IosIconResizerConfigType[] = [
+  { size: 20 },
+  { size: 29 },
+  { size: 40 },
+  { size: 60, skipInitialScale: true },
+  { size: 76, skipTripleScale: true },
+  { size: 83.5, skipTripleScale: true, skipInitialScale: true },
+  {
+    size: 1024,
+    skipTripleScale: true,
+    skipDoubleScale: true,
+    isIosMarketing: true,
+  },
 ];
 
-export const geneateIosIcons = async (imagePath:string) => {
-  const iosIconDirName = "AppIcon.appiconset";
-  const iconDirExists = fs.existsSync(`./${iosIconDirName}`);
-  if(!iconDirExists) {
-    fs.mkdirSync(`./${iosIconDirName}`);
+export const geneateIosIcons = async (imagePath: string) => {
+  const iconDirExists = fs.existsSync(iosAppIconsPath);
+  const contentsConfig = {
+    images: [],
+    info: {
+      version: 1,
+      author: 'xcode',
+    },
+  };
+
+  if (!iconDirExists) {
+    fs.mkdirSync(iosAppIconsPath);
   }
 
   for (const sizeConfig of iosIconResizeConfigs) {
-    if(!sizeConfig.skipInitialScale){
-      const iconPath = `./${iosIconDirName}/icon_${sizeConfig.size}.png`;
-      await sharp(imagePath).resize(sizeConfig.size, sizeConfig.size).png().toFile(iconPath);
+    if (!sizeConfig.skipInitialScale) {
+      const iconName = `icon-${sizeConfig.size}.png`;
+      const iconPath = `${iosAppIconsPath}/${iconName}`;
+      await sharp(imagePath)
+        .resize(sizeConfig.size, sizeConfig.size)
+        .png()
+        .toFile(iconPath);
+
+      const xcodeImageConfig = {
+        size: `${sizeConfig.size}x${sizeConfig.size}`,
+        idiom: sizeConfig.isIosMarketing ? 'ios-marketing' : 'ipad',
+        filename: iconName,
+        scale: '1x',
+      };
+
+      contentsConfig.images.push(xcodeImageConfig);
     }
 
-    if(!sizeConfig.skipDoubleScale){
-      const iconPath = `./${iosIconDirName}/icon_${sizeConfig.size}@2x.png`;
-      await sharp(imagePath).resize(sizeConfig.size * 2, sizeConfig.size * 2).png().toFile(iconPath);
+    if (!sizeConfig.skipDoubleScale) {
+      const iconName = `icon-${sizeConfig.size}@2x.png`;
+      const iconPath = `${iosAppIconsPath}/${iconName}`;
+      await sharp(imagePath)
+        .resize(sizeConfig.size * 2, sizeConfig.size * 2)
+        .png()
+        .toFile(iconPath);
+
+      if (!sizeConfig.skipTripleScale) {
+        const xcodeIponeImageConfig = {
+          size: `${sizeConfig.size}x${sizeConfig.size}`,
+          idiom: 'iphone',
+          filename: iconName,
+          scale: '2x',
+        };
+        contentsConfig.images.push(xcodeIponeImageConfig);
+      }
+
+      if (
+        !sizeConfig.skipInitialScale ||
+        (sizeConfig.skipInitialScale && sizeConfig.skipTripleScale)
+      ) {
+        const xcodeIpadImageConfig = {
+          size: `${sizeConfig.size}x${sizeConfig.size}`,
+          idiom: 'ipad',
+          filename: iconName,
+          scale: '2x',
+        };
+        contentsConfig.images.push(xcodeIpadImageConfig);
+      }
     }
 
-    if(!sizeConfig.skipTripleScale){
-      const iconPath = `./${iosIconDirName}/icon_${sizeConfig.size}@3x.png`;
-      await sharp(imagePath).resize(sizeConfig.size * 3, sizeConfig.size * 3).png().toFile(iconPath);
+    if (!sizeConfig.skipTripleScale) {
+      const iconName = `icon-${sizeConfig.size}@3x.png`;
+      const iconPath = `${iosAppIconsPath}/${iconName}`;
+      await sharp(imagePath)
+        .resize(sizeConfig.size * 3, sizeConfig.size * 3)
+        .png()
+        .toFile(iconPath);
+
+      const xcodeIphoneImageConfig = {
+        size: `${sizeConfig.size}x${sizeConfig.size}`,
+        idiom: 'iphone',
+        filename: iconName,
+        scale: '3x',
+      };
+      contentsConfig.images.push(xcodeIphoneImageConfig);
     }
   }
-}
+
+  fs.writeFileSync(
+    `${iosAppIconsPath}/Contents.json`,
+    JSON.stringify(contentsConfig, null, 2),
+  );
+};
