@@ -17,3 +17,8 @@ export const iosSplashIconPath = path.join(
   __dirname,
   `${iosImageAssetDir}/SplashIcon.imageset`,
 );
+
+export const androidResDir = path.join(
+  __dirname,
+  `../../android/app/src/main/res`,
+);
