@@ -1,4 +1,4 @@
 module.exports = {
-  placeholderName: "ReactNativeBoilerPlate",
+  placeholderName: "reactnativetypescriptboilerplate",
   templateDir: "./template",
 };
