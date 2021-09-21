@@ -10,6 +10,12 @@ This is a react native boileplate that is currently underd development. Some of 
 
 ## Current features
 
+- To test out the template with your own app use the command
+
+  ```
+  npx react-native init myapp --template https://github.com/abdulhamidOumer/react-native-typescript-boilerplate.git
+  ```
+
 - Setting both Android and IOS app icons just by providing a single image by using the prebuilt command line interface. Platform specific Image dimensions are handled by default in the boileplate.
   ```
   yarn set
@@ -20,12 +26,6 @@ This is a react native boileplate that is currently underd development. Some of 
   ```
 
 ## Commands to try till stable version
-
-- To test out the template with your own app use the command
-
-  ```
-  npx react-native init myapp --template https://github.com/abdulhamidOumer/react-native-typescript-boilerplate.git
-  ```
 
 - To set ios & android icons as well as change Splashscreen image use
   `yarn set` or `npm run set`. Asset images live in `src/assets/images`
