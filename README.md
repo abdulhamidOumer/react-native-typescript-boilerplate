@@ -8,7 +8,18 @@ This is a react native boileplate that is currently underd development. Some of 
 - React Native Navigation
 - Custom Generator And Setter Scripts
 
-### Command to try till stable version
+## Current features
+
+- Setting both Android and IOS app icons just by providing a single image by using the prebuilt command line interface. Platform specific Image dimensions are handled by default in the boileplate.
+  ```
+  yarn set
+  ```
+- Generating Components and Slices(Reducers, actions & Saga) by using the command line interface.
+  ```
+  yarn generate
+  ```
+
+## Commands to try till stable version
 
 - To test out the template with your own app use the command
 
