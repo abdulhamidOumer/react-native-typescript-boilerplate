@@ -1,6 +1,6 @@
 ## React Native Typescript Boilerplate
 
-This is a react native boileplate that is currently underd evelopment. Some of the tools used include
+This is a react native boileplate that is currently underd development. Some of the tools used include
 
 - Redux with Redux Saga
 - Redux Toolkit
