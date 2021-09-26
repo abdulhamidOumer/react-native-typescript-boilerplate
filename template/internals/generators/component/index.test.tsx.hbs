@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render } from '@testing-library/react-native';
 
 import { {{ properCase componentName }} } from '..';
 
@@ -19,6 +19,6 @@ jest.mock('react-i18next', () => ({
 describe('<{{ properCase componentName }}  />', () => {
   it('should match snapshot', () => {
     const loadingIndicator = render(<{{ properCase componentName }} />);
-    expect(loadingIndicator.container.firstChild).toMatchSnapshot();
+    expect(loadingIndicator.container).toMatchSnapshot();
   });
 });
