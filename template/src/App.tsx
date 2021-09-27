@@ -30,6 +30,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import MainNavigator from 'app/Navigations';
 
 const Section: React.FC<{
   title: string;
@@ -66,6 +67,7 @@ const App = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   const store = configureAppStore();
@@ -78,7 +80,8 @@ const App = () => {
     <Provider store={store}>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <ScrollView
+        <MainNavigator />
+        {/* <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={backgroundStyle}
         >
@@ -103,7 +106,7 @@ const App = () => {
             </Section>
             <LearnMoreLinks />
           </View>
-        </ScrollView>
+        </ScrollView> */}
       </SafeAreaView>
     </Provider>
   );

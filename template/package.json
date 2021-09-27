@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
+    "@react-navigation/native-stack": "^6.1.0",
     "@reduxjs/toolkit": "^1.6.1",
     "cross-env": "^7.0.3",
     "inquirer-select-directory": "^1.2.0",
