@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { render } from '@testing-library/react-native';
 
-import { Details } from '..';
+import { DetailsScreen } from '..';
 
 describe('<Details  />', () => {
-  it('should match snapshot', () => {
-    const loadingIndicator = render(<Details />);
-    expect(loadingIndicator.container).toMatchSnapshot();
+  it('should render', () => {
+    render(<DetailsScreen />);
   });
 });
