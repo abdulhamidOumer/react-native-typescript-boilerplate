@@ -12,8 +12,7 @@
     "set": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/assetSetters/plopfile.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "checkTs": "tsc --noEmit",
-    "prepare": "husky install",
-    "postinstall": "git init && git add . && git commit -m 'Initial commit' && yarn"
+    "prepare": "git init && git add . && git commit -m 'Initial commit' && husky install"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
