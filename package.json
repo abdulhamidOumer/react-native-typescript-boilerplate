@@ -4,5 +4,8 @@
   "description": "A React native boilerplate using typescript, redux & redux-saga. Inpired and derived from the famous react boilerplate",
   "repository": "git@github.com:abdulhamidOumer/react-native-typescript-boilerplate.git",
   "author": "abdulhamidOumer <abdulhamidoumer3@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
 }
