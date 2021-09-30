@@ -10,7 +10,6 @@ import {
 import * as React from 'react';
 
 import {
-  View,
   Text,
   StyleSheet,
   ScrollView,

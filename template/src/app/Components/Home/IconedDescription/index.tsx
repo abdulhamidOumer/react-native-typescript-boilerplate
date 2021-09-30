@@ -14,7 +14,6 @@ export interface IconedDescriptionProps {
   isDarkMode: boolean;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const IconedDescription = memo((props: IconedDescriptionProps) => {
   const styles = getStyles(props.isDarkMode);
   return (

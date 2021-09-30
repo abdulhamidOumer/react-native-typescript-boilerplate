@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * @format
  */
 
 import 'react-native';
+import '@types/jest';
 import React from 'react';
 import App from '../src/App';
 

@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from 'app/Screens/Home';
 import { DetailsScreen } from 'app/Screens/Details';
 import { RootNavigationStacks } from './types';
-import { StyleSheet, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Stack = createNativeStackNavigator<RootNavigationStacks>();

@@ -9,7 +9,6 @@ import { RootNavigationStacks } from 'app/Navigations/types';
 import { colors } from 'app/constants/theme';
 import * as React from 'react';
 import {
-  View,
   Text,
   Button,
   useColorScheme,

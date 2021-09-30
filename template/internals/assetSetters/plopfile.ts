@@ -1,5 +1,4 @@
 import { NodePlopAPI } from 'node-plop';
-import sharp from 'sharp';
 import { appIconSetter } from './AppIcon';
 import { splashScreenIconSetter } from './SplashScreen';
 import {
