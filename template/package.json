@@ -12,7 +12,8 @@
     "set": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/assetSetters/plopfile.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "checkTs": "tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "init-husky": "ts-node --project=./internals/ts-node.tsconfig.json internals/init-husky.ts"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
@@ -60,6 +61,7 @@
     "rimraf": "^3.0.2",
     "sharp": "^0.29.1",
     "shelljs": "^0.8.4",
+    "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   },
   "resolutions": {
