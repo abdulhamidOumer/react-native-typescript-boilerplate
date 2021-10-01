@@ -1,4 +1,4 @@
-# Quick Start
+# Understanding The Template
 
 This is a react native template to help developers bootstrap their app quickly without spending too much time setting up boilerplate code. The template comes by default with tools :
 
