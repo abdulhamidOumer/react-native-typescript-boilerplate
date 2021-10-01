@@ -4,7 +4,6 @@
  */
 
 import 'react-native';
-import '@types/jest';
 import React from 'react';
 import App from '../src/App';
 
