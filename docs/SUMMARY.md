@@ -1,4 +1,4 @@
 # Summary​
 
 - [Quick Start](README.md)
-- [Understanding `react-native-typescript-boilerplate`](README.md)
+- [Understanding The Template](README.md)

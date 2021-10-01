@@ -7,4 +7,4 @@ This is a react native template to help developers bootstrap their app quickly w
 - React Native Splash Screen
 - Redux Saga
 
-In additions to the tools listed above, the template also come with scripts that automate repititive tasks like generating components and redux toolkit slices boilerplate code.
+In addition to the tools listed above, the template also come with scripts that automate repetitive tasks like generating components and redux toolkit slices boilerplate code.
