@@ -1,3 +1,3 @@
-# Summary​
+# Table of contents
 
-- [Getting Started](getting-started.md)``
+- [Getting Started](getting-started.md)
