@@ -9,3 +9,17 @@ This boilerplate template was built bringing some of the features that those two
 ### Tech Stacks
 
 The boilerplate mostly uses the tools and stacks used by the boilerplates linked above. Lets list out the tools that are used in this template down below:
+
+#### Main Tools
+
+- React Native
+- Redux
+- Redux Toolkit
+- Redux Saga
+- Reselect
+- Typescript
+
+#### Test
+
+- Jest
+- react-testing-library
