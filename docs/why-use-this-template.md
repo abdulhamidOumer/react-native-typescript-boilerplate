@@ -23,3 +23,17 @@ The boilerplate mostly uses the tools and stacks used by the boilerplates linked
 
 - Jest
 - react-testing-library
+
+### Code Base Structure
+
+####`src/app`
+
+The main directory for you to write your code in. This is where your reducers, sagas and components will mainly live in. The structure inside this folder can be customized according to your needs.
+
+####`src/assets`
+
+This directory is part of the boilerplate and is mainly used to store initial images that you wish to set as an App Icon or Splash screen icon. Setter scripts will be picking images from this directory.
+
+####`internals/`
+
+This is the directory where generators, setters and template codes exist. In general codes for `yarn set` and `yarn generate` are available here.
