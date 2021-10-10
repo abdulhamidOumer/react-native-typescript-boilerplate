@@ -14,6 +14,7 @@
 		6172F2D35A4C3AA820D92908 /* libPods-reactNativeTypescriptBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-reactNativeTypescriptBoilerplate.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-reactNativeTypescriptBoilerplate-reactNativeTypescriptBoilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-reactNativeTypescriptBoilerplate-reactNativeTypescriptBoilerplateTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D03693742712AA100089AE06 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D03693732712AA100089AE06 /* libswiftWebKit.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		ABFE59519B596E51CEFDCCC0 /* libPods-reactNativeTypescriptBoilerplate-reactNativeTypescriptBoilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reactNativeTypescriptBoilerplate-reactNativeTypescriptBoilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-reactNativeTypescriptBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeTypescriptBoilerplate.debug.xcconfig"; path = "Target Support Files/Pods-reactNativeTypescriptBoilerplate/Pods-reactNativeTypescriptBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-reactNativeTypescriptBoilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeTypescriptBoilerplate.release.xcconfig"; path = "Target Support Files/Pods-reactNativeTypescriptBoilerplate/Pods-reactNativeTypescriptBoilerplate.release.xcconfig"; sourceTree = "<group>"; };
+		D03693732712AA100089AE06 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03693742712AA100089AE06 /* libswiftWebKit.tbd in Frameworks */,
 				6172F2D35A4C3AA820D92908 /* libPods-reactNativeTypescriptBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +102,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D03693732712AA100089AE06 /* libswiftWebKit.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6423831EA8574132BED9D8CC /* libPods-reactNativeTypescriptBoilerplate.a */,
 				ABFE59519B596E51CEFDCCC0 /* libPods-reactNativeTypescriptBoilerplate-reactNativeTypescriptBoilerplateTests.a */,
@@ -138,6 +142,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8D3DA8728AF84A2E8E09CA38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,14 +159,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		8D3DA8728AF84A2E8E09CA38 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -500,6 +503,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -525,6 +532,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
