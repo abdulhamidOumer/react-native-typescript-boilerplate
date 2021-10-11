@@ -8,21 +8,27 @@ using [YARN](https://yarnpkg.com/) over NPM is recommened when using this templa
 
 {% endhint %}
 
-1. Create react native app by providing`react-native-typescript-boilerplate` as a template.
+1\. Create react native app by providing`react-native-typescript-boilerplate` as a template.
 
 ```
 npx react-native myapp --template https://github.com/abdulhamidOumer/react-native-typescript-boilerplate.git
 ```
 
-2. Get into the generated app's directory and explore the code and features.
+2\. Get into the generated app's directory and explore the code and features.
 
 ```
 cd myapp
 yarn start
 ```
 
-3. Get started by setting your app icon or splash screen icon.
+3\. Get started by setting your app icon or splash screen icon.
 
 ```
 yarn set
+```
+
+4\. Optional - Initiate husky pre-commit hooks
+
+```
+yarn init-husky
 ```

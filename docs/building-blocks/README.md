@@ -87,4 +87,4 @@ This boilerplate includes a complete static code analysis setup. It's composed o
 
 We recommend that you install the relevant IDE extensions for each one of these tools. Once you do, every time you press [save], all your code will automatically be formatted and reviewed for quality.
 
-The template provides a pre-commit git hook to analyze and fix linting errors automatically before committing your code. To initiate the pre-commit hook run `yarn husky-init`. If you'd like to disable it or modify its behavior, take a look at the `lint-staged` section in `package.json`.
+The template provides a pre-commit git hook to analyze and fix linting errors automatically before committing your code. To initiate the pre-commit hook run `yarn init-husky`. If you'd like to disable it or modify its behavior, take a look at the `lint-staged` section in `package.json`.
