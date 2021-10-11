@@ -1,5 +1,9 @@
 ## React Native Typescript Boilerplate
 
+📖 [GitBook](https://abdulhamidoumer.gitbook.io/rn-ts-boilerplate/)
+
+**Disclaimer**: Current version of the template might not be too optimal for production builds.
+
 This is a react native boileplate that is currently underd development. Some of the tools used include
 
 - Redux with Redux Saga
