@@ -16,7 +16,7 @@ project
 ├── app
 │   └── src
 │       ├── app
-│       │   ├── Homepage
+│       │   ├── Homescreen
 │       │   │   ├── index.tsx
 │       │   │   ├── slice => Contains the relevant stuff for Homepage data
 │       │   │   │   ├── index.ts
