@@ -100,6 +100,7 @@ const getStyles = (isDark: boolean) =>
     container: {
       backgroundColor: isDark ? Colors.darker : Colors.white,
       padding: 20,
+      minHeight: '100%',
     },
     logo: {
       width: Dimensions.get('window').width - 40,
