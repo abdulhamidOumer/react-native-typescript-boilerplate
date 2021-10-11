@@ -13,3 +13,4 @@
   - [Redux-Saga](building-blocks/slice/redux-saga.md)
   - [Redux Injectors](building-blocks/slice/redux-injectors.md)
 - [Navigation](building-blocks/navigation.md)
+- [Splash Screen](building-blocks/splash-screen.md)
