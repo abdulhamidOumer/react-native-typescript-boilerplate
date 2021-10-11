@@ -11,6 +11,7 @@
     "generate": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/generators/plopfile.ts",
     "set": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/assetSetters/plopfile.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "yarn run eslint --fix src",
     "checkTs": "tsc --noEmit",
     "prepare": "husky install",
     "init-husky": "ts-node --project=./internals/ts-node.tsconfig.json internals/init-husky.ts"
