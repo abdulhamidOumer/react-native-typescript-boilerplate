@@ -22,6 +22,14 @@ Pictures that you want to use as app icon or as a splash screen icon need to be 
 
 {% endhint %}
 
+### Git Hooks
+
+```
+yarn init-husky
+```
+
+This command will initiate a new git repository for your project if it doesn't exist currently and sets up husky so you can utilize pre commit and push hooks.
+
 ### Unit Testing
 
 ```
@@ -29,3 +37,25 @@ yarn test
 ```
 
 Unit tests specified in the \*_/**tests**/_.ts files throughout the application are run.
+
+### Linting
+
+```
+yarn lint
+```
+
+Lints your typescript code.
+
+```
+yarn lint:fix
+```
+
+Tries to fix lint issues in `src` directory.
+
+### Typescript
+
+```
+yarn checkTs
+```
+
+Checks for typescript errors in the code base.
